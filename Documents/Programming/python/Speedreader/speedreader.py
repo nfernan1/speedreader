@@ -1,5 +1,7 @@
 #Speedreader program
 #Scan 
 fileToScan = input("Scan File: ")
-openFile = 
 print(fileToScan)
+openFile = open('fileToScan', 'r')
+
+print(file.read())
