@@ -2,8 +2,10 @@
 #Scan 
 fileToScan = input("Scan File: ")
 print(fileToScan)
-openFile = open('fileToScan', 'r')
 
-print(file.read())
+with open(fileToScan,'r') as readFile:
+    for line in readFile:
+        for word in line.split():
+            print(word)
 
-hello
+
