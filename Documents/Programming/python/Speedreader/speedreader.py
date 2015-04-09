@@ -5,5 +5,3 @@ print(fileToScan)
 openFile = open('fileToScan', 'r')
 
 print(file.read())
-
-hello
