@@ -17,3 +17,4 @@ with open(fileToScan,'r') as readFile:
             time.sleep(speedOfPrint)
 
 
+hello this is an edit
