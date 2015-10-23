@@ -28,16 +28,19 @@ class Text_Scanner(object):
 
         # Print words in certan range
         position = 0
-        for i in range(position, amountOfWords):
-            position = i + 1
-            print(wordList[i], end=" ")
-            #print_word(position, endPosition)
+        temp = amountOfWords
 
-            # Delays the time a word will appear
-            # time.sleep(speedOfPrint)
+        while position < len(wordList):
+            for i in range(position, temp):
+                position = i + 1
+                print(wordList[i], end=" ")
 
+                # Delays the time a word will appear
+                # time.sleep(speedOfPrint)
+            temp += amountOfWords
+            print(temp) #REMOVE
         print(position) #REMOVE
-        print(wordList) #REMOVE
+        print(wordList) #REMOVE  
 
 
 
