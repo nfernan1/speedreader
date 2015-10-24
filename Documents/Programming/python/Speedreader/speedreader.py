@@ -1,5 +1,6 @@
 #Speedreader program
 #TODO LIST:
+    #Should either be able to upload text file or copy paste text
     #Print a certain amount of words specified by user
     #Make a gui
         #Have a text box that you upload file
@@ -28,17 +29,21 @@ class Text_Scanner(object):
 
         # Print words in certan range
         position = 0
+        storedIdx = 0
         temp = amountOfWords
 
         while position < len(wordList):
-            for i in range(position, temp):
+                
+            for i in range(position, storedIdx):
                 position = i + 1
                 print(wordList[i], end=" ")
 
                 # Delays the time a word will appear
                 # time.sleep(speedOfPrint)
-            temp += amountOfWords
-            print(temp) #REMOVE
+                if storedIdx > len(wordList):
+                    break
+            storedIdx += amountOfWords
+            
         print(position) #REMOVE
         print(wordList) #REMOVE  
 
