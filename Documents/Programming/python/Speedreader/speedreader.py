@@ -12,7 +12,7 @@ import time
 
 fileToScan = 'inputText1.txt' #input("Scan File: ")
 speedOfDisplay = 1.0 #float(input("Enter word speed: "))
-amountOfWords = 3 #int(input("Enter amount of words: "))
+amountOfWords = 4 #int(input("Enter amount of words: "))
 
 class Text_Scanner(object):
     
@@ -30,19 +30,23 @@ class Text_Scanner(object):
         # Print words in certan range
         position = 0
         storedIdx = 0
-        temp = amountOfWords
-
         while position < len(wordList):
                 
             for i in range(position, storedIdx):
                 position = i + 1
-                print(wordList[i], end=" ")
-
-                # Delays the time a word will appear
-                # time.sleep(speedOfPrint)
-                if storedIdx > len(wordList):
+                try:
+                    print(wordList[i], end=" ")
+                except IndexError:
                     break
-            storedIdx += amountOfWords
+                
+            # Delays the time a word will appear
+            print(storedIdx)
+            time.sleep(speedOfDisplay)
+            
+            if storedIdx > len(wordList):
+                storedIdx = len(wordList)
+            else:
+                storedIdx += amountOfWords
             
         print(position) #REMOVE
         print(wordList) #REMOVE  
